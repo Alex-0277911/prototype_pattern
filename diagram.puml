@@ -1,0 +1,33 @@
+@startuml
+set namespaceSeparator ::
+
+abstract class "prototype_pattern::prototype_pattern.dart::Radio" {
+  +String brand
+  +String model
+  +int price
+  +Radio clone()
+}
+
+class "prototype_pattern::prototype_pattern.dart::BasicRadio" {
+  +Radio clone()
+}
+
+"prototype_pattern::prototype_pattern.dart::Radio" <|-- "prototype_pattern::prototype_pattern.dart::BasicRadio"
+
+class "prototype_pattern::prototype_pattern.dart::DeluxeRadio" {
+  +Radio clone()
+}
+
+"prototype_pattern::prototype_pattern.dart::Radio" <|-- "prototype_pattern::prototype_pattern.dart::DeluxeRadio"
+
+class "prototype_pattern::prototype_pattern.dart::RadioStore" {
+  +Radio basicRadioPrototype
+  +Radio deluxeRadioPrototype
+  +Radio createBasicRadio()
+  +Radio createDeluxeRadio()
+}
+
+"prototype_pattern::prototype_pattern.dart::RadioStore" o-- "prototype_pattern::prototype_pattern.dart::Radio"
+
+
+@enduml
