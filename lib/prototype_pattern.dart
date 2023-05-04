@@ -56,16 +56,20 @@ class RadioStore {
 }
 
 void main() {
+  // створюємо об'єкти радіо
   var basicRadio = BasicRadio('Sony', 'XDR-S41D', 99);
   var deluxeRadio = DeluxeRadio('Bose', 'Wave SoundTouch IV', 599);
 
+  // створюємо об'єкт радіомагазин
   var radioStore = RadioStore(basicRadio, deluxeRadio);
 
+  // клонуємо (створюємо з прототипа радіо)
   var myRadio = radioStore.createBasicRadio();
 
   print(
       'My radio is a ${myRadio.brand} ${myRadio.model} that cost me ${myRadio.price} dollars.');
 
+  // клонуємо (створюємо з прототипа радіо)
   var expensiveRadio = radioStore.createDeluxeRadio();
 
   print(
